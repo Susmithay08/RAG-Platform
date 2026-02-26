@@ -6,11 +6,11 @@ A **multi-tenant RAG (Retrieval-Augmented Generation)** document chat platform. 
 
 🔗 Frontend (Vercel):
 
-
+https://rag-platform-1.onrender.com
 
 🔗 Backend (Render):
 
-
+https://rag-platform-mwu4.onrender.com
 
 ## 🖼 Preview
 
