@@ -4,7 +4,7 @@ A **multi-tenant RAG (Retrieval-Augmented Generation)** document chat platform. 
 
 ## 🌐 Live Demo
 
-🔗 Frontend (Vercel):
+🔗 Frontend (Render):
 
 https://rag-platform-1.onrender.com
 
