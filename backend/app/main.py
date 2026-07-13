@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 from contextlib import asynccontextmanager
 from app.core.database import init_db
 from app.api import auth, workspaces, documents, chat, stats, health
@@ -41,3 +43,7 @@ app.include_router(workspaces.router, prefix="/api/workspaces", tags=["workspace
 app.include_router(documents.router, prefix="/api/documents", tags=["documents"])
 app.include_router(chat.router, prefix="/api/chat", tags=["chat"])
 app.include_router(stats.router, prefix="/api/stats", tags=["stats"])
+
+# Serve the built frontend — must be added LAST so /api/* is matched first
+frontend_dist = Path(__file__).resolve().parent.parent / "static"
+app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="static")
